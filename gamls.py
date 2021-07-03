@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 
-headers = {
+'''headers = {
     'Referer': 'https://www.gamls.com/',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
@@ -18,18 +18,18 @@ html = resp.text
 f = open("login.html", "w")
 f.write(html)
 f.close()
+'''
 
-
-'''WAIT = 5
+WAIT = 5
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get("https://www.gamls.com")
 time.sleep(WAIT)
-driver.find_element_by_id('username').send_keys("OLIVERCRYSTE")
-driver.find_element_by_id('password').send_keys("DreamTeam18!")
-driver.find_element_by_id('sendLoginLg').click()
+driver.find_element_by_id('username2').send_keys("OLIVERCRYSTE")
+driver.find_element_by_id('Password2').send_keys("DreamTeam18!")
+driver.find_element_by_id('sendLoginSm').click()
 time.sleep(WAIT*2)
-'''
+
 
 
 '''with sync_playwright() as p:
