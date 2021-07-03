@@ -6,11 +6,14 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 
-
+headers = {
+    'Referer': 'https://www.gamls.com/',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
 payload = 'username=OLIVERCRYSTE&password=DreamTeam18!&sendLogin='
 s = requests.session()
 s.get("https://www.gamls.com")
-resp = s.post("https://www.gamls.com/login/login", data=payload)
+resp = s.post("https://www.gamls.com/login/login", data=payload, headers=headers)
 html = resp.text
 f = open("login.html", "w")
 f.write(html)
